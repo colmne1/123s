@@ -10,14 +10,16 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="132dp"
+        android:layout_height="25dp"
         android:text="Все задачи"
+        android:textSize="24sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle"
         android:layout_width="375dp"
         android:layout_height="554dp"
         tools:layout_editor_absoluteX="17dp"
@@ -27,6 +29,8 @@
         android:id="@+id/sozd"
         android:layout_width="42dp"
         android:layout_height="46dp"
+        android:foreground="@android:drawable/checkbox_on_background"
+        android:foregroundGravity="center"
         android:text="Button"
         tools:layout_editor_absoluteX="344dp"
         tools:layout_editor_absoluteY="635dp" />
