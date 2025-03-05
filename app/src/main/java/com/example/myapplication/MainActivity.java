@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewNotes.setAdapter(noteAdapter);
         Button buttonAddNote = findViewById(R.id.sozd);
         buttonAddNote.setOnClickListener(v ->{
-            Intent intent = new Intent(MainActivity.this.AddNoteActivity.class);
+            Intent intent = new Intent(MainActivity.this, AddNoteActivity.class);
             startActivityForResult(intent,1);
         });
         Button buttonDelete=findViewById(R.id.delete);
@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     @Override
-    protected void OnActivityResult(int requestCode, int resultCode, Intent data){
+    protected void OnActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode,data);
         if(requestCode==1 & resultCode==-1){
             String noteContent = data.getStringExtra("note");
-            String currentDate = new SimpleDateFormat("dd.MM.yy", Locale.getDefault()).format(new Date());
+            String currentDate = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(new Date());
             noteList.add(new Note(currentDate,noteContent));
             noteAdapter.notifyDataSetChanged();
         }
